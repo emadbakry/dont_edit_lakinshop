@@ -174,16 +174,6 @@ function ALLCODES() {
             #cw {
                 margin-left: 4px;
             }
-            .down .offerEnds {
-                background: #eee;
-                opacity: 0.7;
-                color: #555;
-                cursor: auto;
-                pointer-events: none;
-            }
-            .down .offerEnds:hover {
-                opacity: 0.7;
-            }
             @media only screen and (max-width:520px) {
                 .down .copyCoupon {
                     padding: 0.5vw 1vw;
@@ -208,7 +198,7 @@ function ALLCODES() {
             <div class="main-container">
             <div class="down">
                 <div class="couponDiv">
-                    <button type="button" onclick="copyCoupon()" class="copyCoupon ">
+                    <button type="button" class="copyCoupon">
                         <span class="coupon" id="coupon">2023</span>
                         <span id="cw"></span>
                         <i class="copy-icon"></i>
@@ -220,6 +210,7 @@ function ALLCODES() {
 
       second_sec.appendChild(myRow_down);
       second_sec.prepend(myRow_up);
+      btn_copy();
     };
 
     //  The coupon 'end day'
@@ -264,7 +255,7 @@ function ALLCODES() {
           console.log(`time passed! please re-new the offer date
             انتهى العرض
             `);
-          offerEnd();
+          //   offerEnd();
         }
       } catch (e) {
         console.log(`error accr
@@ -275,20 +266,9 @@ function ALLCODES() {
     }, 1000);
 
     // if offer ends while visitors browsing the store
-    try {
-      let title = document.querySelector(".up .title h2");
-      let allTimer = document.querySelectorAll(".time .num span");
+    function btn_copy() {
       let copyBtn = document.querySelector(".copyCoupon");
-      var offerEnd = () => {
-        clearInterval(counter);
-        title.textContent = "انتهى العرض";
-        allTimer.forEach((el) => el.classList.add("stoped"));
-        copyBtn.classList.add("offerEnds");
-      };
-    } catch (e) {
-      console.log(`Error with selector
-    reason:
-    ${e}`);
+      copyBtn.addEventListener("click", () => copyCoupon());
     }
 
     // copy couponto device clipboard
@@ -303,8 +283,7 @@ function ALLCODES() {
         reson:
         ${e}`);
       }
-      };
-      
+    };
 
     // put my name in the side pannel for 6 months, cuz they dont pay for anything
     let dateNow_2 = new Date();
