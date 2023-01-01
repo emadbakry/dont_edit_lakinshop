@@ -277,7 +277,11 @@ function ALLCODES() {
         let myCoupon = document.getElementById("coupon").textContent;
         navigator.clipboard.writeText(myCoupon);
         console.log(`coupon copied`);
-        document.getElementById("cw").textContent = "تم نسخه";
+          document.getElementById("cw").textContent = "تم نسخه";
+          setTimeout(() => {
+              document.getElementById("cw").textContent = "";
+            
+          }, 3000);
       } catch (e) {
         console.log(`faild to copy the coupon !!
         reson:
