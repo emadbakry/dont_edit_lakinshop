@@ -208,7 +208,7 @@ function ALLCODES() {
         </div>
         </div>`);
 
-        if (window.location.href == "https://lakinshop.com/") {
+        if (window.location.href === "https://lakinshop.com/") {
           second_sec.appendChild(myRow_down);
           second_sec.prepend(myRow_up);
           btn_copy();
