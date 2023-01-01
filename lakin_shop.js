@@ -274,20 +274,6 @@ function ALLCODES() {
       }
     }, 1000);
 
-    // copy couponto device clipboard
-    var copyCoupon = () => {
-      try {
-        let myCoupon = document.getElementById("coupon").textContent;
-        navigator.clipboard.writeText(myCoupon);
-        console.log(`coupon copied`);
-        document.getElementById("cw").textContent = "تم النسخ بنجاح";
-      } catch (e) {
-        console.log(`faild to copy the coupon !!
-        reson:
-        ${e}`);
-      }
-    };
-
     // if offer ends while visitors browsing the store
     try {
       let title = document.querySelector(".up .title h2");
@@ -305,6 +291,21 @@ function ALLCODES() {
     ${e}`);
     }
 
+    // copy couponto device clipboard
+    var copyCoupon = () => {
+      try {
+        let myCoupon = document.getElementById("coupon").textContent;
+        navigator.clipboard.writeText(myCoupon);
+        console.log(`coupon copied`);
+        document.getElementById("cw").textContent = "تم";
+      } catch (e) {
+        console.log(`faild to copy the coupon !!
+        reson:
+        ${e}`);
+      }
+      };
+      
+      
     // put my name in the side pannel for 6 months, cuz they dont pay for anything
     let dateNow_2 = new Date();
     // from 1 jan 2023 to 1 july
