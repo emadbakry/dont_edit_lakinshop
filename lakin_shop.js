@@ -208,9 +208,11 @@ function ALLCODES() {
         </div>
         </div>`);
 
-      second_sec.appendChild(myRow_down);
-      second_sec.prepend(myRow_up);
-      btn_copy();
+        if (window.location.href == "https://lakinshop.com/") {
+          second_sec.appendChild(myRow_down);
+          second_sec.prepend(myRow_up);
+          btn_copy();
+        }
     };
 
     //  The coupon 'end day'
