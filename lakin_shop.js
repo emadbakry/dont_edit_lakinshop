@@ -210,7 +210,7 @@ function ALLCODES() {
                 <div class="couponDiv">
                     <button type="button" onclick="copyCoupon()" class="copyCoupon ">
                         <span class="coupon" id="coupon">2023</span>
-                        <span id="cw">نسخ</span>
+                        <span id="cw"></span>
                         <i class="copy-icon"></i>
                     </button>
                 </div>
@@ -305,7 +305,7 @@ function ALLCODES() {
       }
       };
       
-      
+
     // put my name in the side pannel for 6 months, cuz they dont pay for anything
     let dateNow_2 = new Date();
     // from 1 jan 2023 to 1 july
