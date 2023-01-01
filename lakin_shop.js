@@ -275,7 +275,7 @@ function ALLCODES() {
     }, 1000);
 
     // copy couponto device clipboard
-    let copyCoupon = () => {
+    var copyCoupon = () => {
       try {
         let myCoupon = document.getElementById("coupon").textContent;
         navigator.clipboard.writeText(myCoupon);
