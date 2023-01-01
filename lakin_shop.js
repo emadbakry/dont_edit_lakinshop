@@ -209,84 +209,69 @@ function ALLCODES() {
         </div>`);
 
         if (window.location.href === "https://lakinshop.com/") {
-            let pic_downloaded = () => {
-                second_sec.appendChild(myRow_down);
-                second_sec.prepend(myRow_up);
-                btn_copy();
-            }
-
-            let check_pic_downloaded = () => {
-                let main_banner = document.querySelector('.my_template .row img');
-                if (main_banner.classList.contains('loaded')) {
-                    pic_downloaded();
-                } else {
-                  check_pic_downloaded();
-                }
-            }
-            check_pic_downloaded();
+          second_sec.appendChild(myRow_down);
+          second_sec.prepend(myRow_up);
+          btn_copy();
         }
     };
 
-      let run_ad = () => {
-          
-          //  The coupon 'end day'
-          let countDownDate = new Date("Jan 5, 2023 20:40:50").getTime();
-          let one_time = 0;
-          let counter = setInterval(() => {
-              try {
-                  let dateNow = new Date().getTime();
-                  
-                  // diff between Now and end day
-                  let dateDiff = countDownDate - dateNow;
-                  
-                  if (dateDiff > 0) {
-                      if (one_time < 1) {
-                          let test1 = performance.now();
-                          // new_row.classList.add('in_loading');
-                          // setTimeout(() => {
-                              add_temp();
-                              // new_row.classList.remove('in_loading');
-                              let test2 = performance.now();
-                              console.log(test2 - test1);
-                              // }, 1200);
-                            }
-                            one_time++;
-                            // time units
-                            let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
-                            let hours = Math.floor(
-                                (dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                                );
-                                let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
-                                let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
-                                
-                                document.getElementById("daysNum").textContent =
-                                days < 10 ? `0${days}` : days;
-                                document.getElementById("hoursNum").textContent =
-                                hours < 10 ? `0${hours}` : hours;
-                                document.getElementById("minutesNum").textContent =
-                                minutes < 10 ? `0${minutes}` : minutes;
-                                document.getElementById("secondsNum").textContent =
-                                seconds < 10 ? `0${seconds}` : seconds;
-                            } else {
-                                console.log(`time passed! please re-new the offer date
-                                انتهى العرض
-                                `);
-                                //   offerEnd();
-                            }
-                        } catch (e) {
-                            console.log(`error accr
-                            reason:
-                            ${e}`);
-                            clearInterval(counter);
-                        }
-                    }, 1000);
-                    
-                    // if offer ends while visitors browsing the store
-                    function btn_copy() {
-                        let copyBtn = document.querySelector(".copyCoupon");
-                        copyBtn.addEventListener("click", () => copyCoupon());
-                    }
-                }
+    //  The coupon 'end day'
+    let countDownDate = new Date("Jan 5, 2023 20:40:50").getTime();
+    let one_time = 0;
+    let counter = setInterval(() => {
+      try {
+        let dateNow = new Date().getTime();
+
+        // diff between Now and end day
+        let dateDiff = countDownDate - dateNow;
+
+        if (dateDiff > 0) {
+          if (one_time < 1) {
+            let test1 = performance.now();
+            // new_row.classList.add('in_loading');
+            // setTimeout(() => {
+            add_temp();
+            // new_row.classList.remove('in_loading');
+            let test2 = performance.now();
+            console.log(test2 - test1);
+            // }, 1200);
+          }
+          one_time++;
+          // time units
+          let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+          let hours = Math.floor(
+            (dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+          let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+
+          document.getElementById("daysNum").textContent =
+            days < 10 ? `0${days}` : days;
+          document.getElementById("hoursNum").textContent =
+            hours < 10 ? `0${hours}` : hours;
+          document.getElementById("minutesNum").textContent =
+            minutes < 10 ? `0${minutes}` : minutes;
+          document.getElementById("secondsNum").textContent =
+            seconds < 10 ? `0${seconds}` : seconds;
+        } else {
+          console.log(`time passed! please re-new the offer date
+            انتهى العرض
+            `);
+          //   offerEnd();
+        }
+      } catch (e) {
+        console.log(`error accr
+        reason:
+        ${e}`);
+        clearInterval(counter);
+      }
+    }, 1000);
+
+    // if offer ends while visitors browsing the store
+    function btn_copy() {
+      let copyBtn = document.querySelector(".copyCoupon");
+      copyBtn.addEventListener("click", () => copyCoupon());
+    }
 
     // copy couponto device clipboard
     var copyCoupon = () => {
