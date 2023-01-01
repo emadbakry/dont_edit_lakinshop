@@ -220,7 +220,7 @@ function ALLCODES() {
                 if (main_banner.classList.contains('loaded')) {
                     pic_downloaded();
                 } else {
-                  setTimeout(() => {check_pic_downloaded();}, 500);
+                  check_pic_downloaded();
                 }
             }
             check_pic_downloaded();
