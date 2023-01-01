@@ -287,9 +287,6 @@ function ALLCODES() {
         ${e}`);
       }
     };
-    if ("ali".includes("n")) {
-      copyCoupon();
-    }
 
     // if offer ends while visitors browsing the store
     try {
