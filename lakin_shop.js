@@ -209,9 +209,21 @@ function ALLCODES() {
         </div>`);
 
         if (window.location.href === "https://lakinshop.com/") {
-          second_sec.appendChild(myRow_down);
-          second_sec.prepend(myRow_up);
-          btn_copy();
+            let pic_downloaded = () => {
+                second_sec.appendChild(myRow_down);
+                second_sec.prepend(myRow_up);
+                btn_copy();
+            }
+
+            let check_pic_downloaded = () => {
+                let main_banner = document.querySelector('.my_template .row img');
+                if (main_banner.classList.contains('loaded')) {
+                    pic_downloaded();
+                } else {
+                  setTimeout(() => {check_pic_downloaded();}, 500);
+                }
+            }
+            check_pic_downloaded();
         }
     };
 
