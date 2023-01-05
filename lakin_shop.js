@@ -216,7 +216,7 @@ function ALLCODES() {
     };
 
     //  The coupon 'end day'
-    let countDownDate = new Date("Jan 5, 2023 20:40:50").getTime();
+    let countDownDate = new Date("Jan 5, 2023 22:59:59").getTime();
     let one_time = 0;
     let counter = setInterval(() => {
       try {
